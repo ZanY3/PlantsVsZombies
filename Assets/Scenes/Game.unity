@@ -600,6 +600,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3866924838914243879, guid: f5f0e308a8fa9474f8c33646b64a89dc, type: 3}
   m_PrefabInstance: {fileID: 184656996}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &204714996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204714997}
+  m_Layer: 0
+  m_Name: SunSpawner(C)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &204714997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204714996}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 2, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2111437722}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &233658583
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c727b4642b942a74bbe0dfa5659039ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 150
+  count: 50
   sunText: {fileID: 1347723722}
 --- !u!4 &233658585
 Transform:
@@ -1343,6 +1374,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3866924838914243879, guid: f5f0e308a8fa9474f8c33646b64a89dc, type: 3}
   m_PrefabInstance: {fileID: 628248519}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &773390572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 773390573}
+  m_Layer: 0
+  m_Name: SunSpawner(L)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &773390573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773390572}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.74, y: 2, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2111437722}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &793323264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1409,6 +1471,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3866924838914243879, guid: f5f0e308a8fa9474f8c33646b64a89dc, type: 3}
   m_PrefabInstance: {fileID: 793323264}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &849950624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 849950625}
+  m_Layer: 0
+  m_Name: SunSpawner(R)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &849950625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849950624}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.31, y: 2, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2111437722}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &873403044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1904,8 +1997,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2064763374}
   - {fileID: 3754016389580762535}
+  - {fileID: 2064763374}
   m_Father: {fileID: 159889337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2034,7 +2127,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 150
+  m_text: '50
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2939,6 +3034,59 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7585622538745618551, guid: 7efb32b75d2383c48b3363cbfe379633, type: 3}
   m_PrefabInstance: {fileID: 2064763373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2111437721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111437722}
+  - component: {fileID: 2111437723}
+  m_Layer: 0
+  m_Name: SunFromSkySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2111437722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111437721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5906701, y: 4.116898, z: -9.979745}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 773390573}
+  - {fileID: 204714997}
+  - {fileID: 849950625}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2111437723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111437721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e720a24f43f1d42a1428756ff2c566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawners:
+  - {fileID: 773390572}
+  - {fileID: 204714996}
+  - {fileID: 849950624}
+  sunPrefab: {fileID: 2357499064426808586, guid: 7b57961adc4d72741acb12f09e3a43c4, type: 3}
+  spawnCD: 7
 --- !u!1001 &2141053769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3194,3 +3342,4 @@ SceneRoots:
   - {fileID: 387245188}
   - {fileID: 124571558}
   - {fileID: 233658585}
+  - {fileID: 2111437722}

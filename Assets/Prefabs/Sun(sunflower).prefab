@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4603898514659322326
+--- !u!1 &4729300910955428970
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5333450226646935771}
-  - component: {fileID: 3987663556197707973}
-  - component: {fileID: 2109179210148757138}
-  - component: {fileID: 8385376115723776663}
+  - component: {fileID: 7380060882290165988}
+  - component: {fileID: 2492485573702791416}
+  - component: {fileID: 6012782836425699011}
+  - component: {fileID: 7928132284316864390}
   m_Layer: 0
-  m_Name: SunFlower
+  m_Name: Sun(sunflower)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5333450226646935771
+--- !u!4 &7380060882290165988
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4603898514659322326}
+  m_GameObject: {fileID: 4729300910955428970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.016, y: 3.159, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -0.4653793, y: 6.0244937, z: 10}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3987663556197707973
+--- !u!212 &2492485573702791416
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4603898514659322326}
+  m_GameObject: {fileID: 4729300910955428970}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,25 +74,25 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 0e98fc12390ee0e4fb8bbad8d2bfc077, type: 3}
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 21300000, guid: 54b9d76b2166daf409c1585e78032513, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.62, y: 3.77}
+  m_Size: {x: 1.77, y: 1.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2109179210148757138
-BoxCollider2D:
+--- !u!58 &6012782836425699011
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4603898514659322326}
+  m_GameObject: {fileID: 4729300910955428970}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -115,36 +115,23 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03405261, y: -0.32056266}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.62, y: 3.77}
-    newSize: {x: 6.62, y: 3.77}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 3.4190803, y: 3.1288748}
-  m_EdgeRadius: 0
---- !u!114 &8385376115723776663
+  m_Radius: 1.4
+--- !u!114 &7928132284316864390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4603898514659322326}
+  m_GameObject: {fileID: 4729300910955428970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36aa8c21cfbf7274495f17e4124358a1, type: 3}
+  m_Script: {fileID: 11500000, guid: f9327edc107626745b1e8e08fe1f69b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sunPrefab: {fileID: 4729300910955428970, guid: a1f62fb6e9dd94a429a1267a355a306a, type: 3}
-  spawnParticles: {fileID: 2448207519501365352, guid: 288d617664c0d1040b95902e65c604f3, type: 3}
-  sunSpawnCD: 18
-  defaultSprite: {fileID: 21300000, guid: 0e98fc12390ee0e4fb8bbad8d2bfc077, type: 3}
-  spawnSprite: {fileID: 21300000, guid: f317cd34b83e747458b3b88592ee6ce5, type: 3}
+  addValue: 25
+  takeParticles: {fileID: 2448207519501365352, guid: 288d617664c0d1040b95902e65c604f3, type: 3}

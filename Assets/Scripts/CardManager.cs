@@ -52,9 +52,11 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     void Update()
     {
         if(sunManager.count < plantPrice)
-        {
             SetAlpha(0.5f);
-        }
+
+        else
+            SetAlpha(1f);
+
         if (isDragging && plantGhost != null)
         {
             plantGhost.transform.position = GetPointerWorldPosition();
