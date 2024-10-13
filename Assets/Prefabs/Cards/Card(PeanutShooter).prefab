@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantPrefab: {fileID: 6175858176748784048, guid: 9b8c930f059ab1943a60be542878b7cf, type: 3}
   icon: {fileID: 7703079580991726771}
+  plantGhostPrefab: {fileID: 7457135518528144791, guid: 5786d60dd555e444fbd9a1c4b7c4f358, type: 3}
   plantPrice: 100
 --- !u!1 &7703079580991726771
 GameObject:

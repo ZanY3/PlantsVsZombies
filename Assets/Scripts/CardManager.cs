@@ -8,10 +8,11 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public GameObject plantPrefab;
     public GameObject icon;
+    public GameObject plantGhostPrefab;  // Призрак, задается через инспектор
     public int plantPrice;
 
     private GameObject gridObj;
-    private GameObject plantGhost;  // "Призрак" растения при перетаскивании
+    private GameObject plantGhostInstance;  // Экземпляр призрака
     private bool isDragging = false;
     private GameObject cellVariable;
     private SunManager sunManager;
@@ -21,53 +22,53 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (plantPrefab != null && sunManager.count >= plantPrice)
         {
             gridObj.SetActive(true);
-            plantGhost = Instantiate(plantPrefab);
-            plantGhost.GetComponent<Collider2D>().enabled = false;
+            plantGhostInstance = Instantiate(plantGhostPrefab);
         }
         isDragging = true;
     }
 
-    //когда игрок отпускает нажатие
+    // когда игрок отпускает нажатие
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (plantGhost != null)
+        if (plantGhostInstance != null)
         {
             PlacePlantInNearestCell();
-            Destroy(plantGhost);
+            Destroy(plantGhostInstance);
         }
         isDragging = false;
         gridObj.SetActive(false);
     }
+
     private void Awake()
     {
         sunManager = FindAnyObjectByType<SunManager>();
         gridObj = GameObject.FindGameObjectWithTag("Grid");
     }
+
     private void Start()
     {
         gridObj.SetActive(false);
     }
 
-
     void Update()
     {
-        if(sunManager.count < plantPrice)
+        if (sunManager.count < plantPrice)
             SetAlpha(0.5f);
-
         else
             SetAlpha(1f);
 
-        if (isDragging && plantGhost != null)
+        if (isDragging && plantGhostInstance != null)
         {
-            plantGhost.transform.position = GetPointerWorldPosition();
+            plantGhostInstance.transform.position = GetPointerWorldPosition();
         }
     }
+
     public void SetAlpha(float alpha)
     {
         alpha = Mathf.Clamp01(alpha);
 
         // Получаем компонент Image и устанавливаем цвет с новым альфа-каналом
-        UnityEngine.UI.Image gameObjImage = gameObject.GetComponent<UnityEngine.UI.Image>(); // Явно указываем пространство имен
+        UnityEngine.UI.Image gameObjImage = gameObject.GetComponent<UnityEngine.UI.Image>();  // Явно указываем пространство имен
         Color gameObjColor = gameObjImage.color;
         gameObjColor.a = alpha;
         gameObjImage.color = gameObjColor;
@@ -76,8 +77,8 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Color iconObjColor = iconImage.color;
         iconObjColor.a = alpha;
         iconImage.color = iconObjColor;
+    }
 
-    }    
     // Преобразуем позицию указателя в мировые координаты
     private Vector3 GetPointerWorldPosition()
     {
@@ -96,7 +97,7 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         // Пробегаемся по всем клеткам и находим ближайшую
         foreach (GameObject cell in cells)
         {
-            float distance = Vector3.Distance(cell.transform.position, plantGhost.transform.position);
+            float distance = Vector3.Distance(cell.transform.position, plantGhostInstance.transform.position);
             if (distance < minDistance)
             {
                 cellVariable = cell;
@@ -119,9 +120,10 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             ReturnPlant();
         }
     }
+
     public void ReturnPlant()
     {
-        Destroy(plantGhost);
+        Destroy(plantGhostInstance);
         isDragging = false;
-    }    
+    }
 }

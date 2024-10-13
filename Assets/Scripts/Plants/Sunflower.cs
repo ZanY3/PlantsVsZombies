@@ -6,7 +6,11 @@ public class Sunflower : MonoBehaviour
 {
     public GameObject sunPrefab;
     public GameObject spawnParticles;
+
+    [Space]
     public float sunSpawnCD;
+    public float minSpawnCD;
+    public float maxSpawnCD;
 
     [Space]
     public SpriteRenderer headSpRndr;
@@ -25,7 +29,9 @@ public class Sunflower : MonoBehaviour
         minY = transform.position.y - 0.5f;
         maxY = transform.position.y + 0.5f;
 
+        sunSpawnCD = Random.Range(minSpawnCD, maxSpawnCD);
         startSunSpawnCD = sunSpawnCD;
+
         anim = GetComponent<Animator>();
     }
 
@@ -41,7 +47,8 @@ public class Sunflower : MonoBehaviour
         if(sunSpawnCD <= 0)
         {
             SpawnSun();
-            sunSpawnCD = startSunSpawnCD;
+            sunSpawnCD = Random.Range(minSpawnCD, maxSpawnCD);
+            startSunSpawnCD = sunSpawnCD;
         }
     }
     public void SpawnSun()
