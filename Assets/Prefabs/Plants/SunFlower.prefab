@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2109179210148757138}
   - component: {fileID: 8385376115723776663}
   - component: {fileID: 6756715993839940687}
+  - component: {fileID: 4928392873951929300}
   m_Layer: 0
   m_Name: SunFlower
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +121,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4928392873951929300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603898514659322326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df76f95d68c1708439ea61b88161c81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &6434135153035932378
 GameObject:
   m_ObjectHideFlags: 0

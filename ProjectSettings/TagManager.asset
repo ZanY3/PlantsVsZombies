@@ -7,6 +7,7 @@ TagManager:
   - Cell
   - Grid
   - Zombie
+  - Plant
   layers:
   - Default
   - TransparentFX
