@@ -9,10 +9,12 @@ public class Sunflower : MonoBehaviour
     public float sunSpawnCD;
 
     [Space]
+    public SpriteRenderer headSpRndr;
     public Sprite defaultSprite;
     public Sprite spawnSprite;
 
 
+    private Animator anim;
     private float minX, minY, maxX, maxY;
     private float startSunSpawnCD;
 
@@ -24,14 +26,16 @@ public class Sunflower : MonoBehaviour
         maxY = transform.position.y + 0.5f;
 
         startSunSpawnCD = sunSpawnCD;
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
     {
         sunSpawnCD -= Time.deltaTime;
-        if(sunSpawnCD <= 3)
+        if(sunSpawnCD <= 2)
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = spawnSprite;
+            anim.SetBool("Spawn", true);
+            headSpRndr.sprite = spawnSprite;
         }
 
         if(sunSpawnCD <= 0)
@@ -50,7 +54,8 @@ public class Sunflower : MonoBehaviour
         Instantiate(sunPrefab, spawnPosition, Quaternion.identity);
         Instantiate(spawnParticles, transform.position, Quaternion.identity);
 
-        gameObject.GetComponent<SpriteRenderer>().sprite = defaultSprite;
+        headSpRndr.sprite = defaultSprite;
+        anim.SetBool("Spawn", false);
     }
 
 }

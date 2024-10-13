@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Cell
   - Grid
+  - Zombie
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Zombie
   - Water
   - UI
   - 
