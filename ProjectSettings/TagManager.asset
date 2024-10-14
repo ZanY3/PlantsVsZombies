@@ -8,6 +8,8 @@ TagManager:
   - Grid
   - Zombie
   - Plant
+  - SunflowerCard
+  - PeaShooterCard
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - Zombie
   - Water
   - UI
-  - 
-  - 
+  - Plant
+  - Bullet
   - 
   - 
   - 

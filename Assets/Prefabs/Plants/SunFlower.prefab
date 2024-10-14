@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8385376115723776663}
   - component: {fileID: 6756715993839940687}
   - component: {fileID: 4928392873951929300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SunFlower
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -97,8 +97,8 @@ MonoBehaviour:
   sunPrefab: {fileID: 4729300910955428970, guid: a1f62fb6e9dd94a429a1267a355a306a, type: 3}
   spawnParticles: {fileID: 2448207519501365352, guid: 288d617664c0d1040b95902e65c604f3, type: 3}
   sunSpawnCD: 0
-  minSpawnCD: 8
-  maxSpawnCD: 14
+  minSpawnCD: 8.5
+  maxSpawnCD: 16
   headSpRndr: {fileID: 549989593393302242}
   defaultSprite: {fileID: 1612831645, guid: 9606952bafb5abb4cb8a40608d45d905, type: 3}
   spawnSprite: {fileID: 1906396783, guid: 9606952bafb5abb4cb8a40608d45d905, type: 3}
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  plantCardManagerTag: SunflowerCard
 --- !u!1 &6434135153035932378
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8603435394216885537}
   - component: {fileID: 8361405451075721228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1376923013616703544}
   - component: {fileID: 549989593393302242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}

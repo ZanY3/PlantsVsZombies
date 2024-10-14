@@ -5,12 +5,21 @@ using UnityEngine;
 public class PlantHp : MonoBehaviour
 {
     public int health;
+    public string plantCardManagerTag;
+
+    private CardManager cardManager;
+
+    private void Start()
+    {
+        cardManager = GameObject.FindGameObjectWithTag(plantCardManagerTag).GetComponent<CardManager>();
+    }
 
     private void Update()
     {
         if(health <= 0)
         {
             // death anim;
+            cardManager.ExemptCell();
             Destroy(gameObject);
         }
     }

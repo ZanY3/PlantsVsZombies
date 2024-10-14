@@ -20,8 +20,7 @@ public class Bullet : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Zombie"))
         {
-            collision.gameObject.GetComponent<ZombieController>().health -= damage;
-            //sounds, effects
+            collision.gameObject.GetComponent<ZombieController>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

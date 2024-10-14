@@ -21,20 +21,30 @@ public class ZombieController : MonoBehaviour
         anim = GetComponent<Animator>();
         startDamageCD = damageCD;
     }
-    private async void Update()
+    private void Update()
     {
         rb.velocity = new Vector2(speed, rb.velocity.y);
 
         if(health <= 0)
         {
-            //sounds, effects
-            head.SetActive(false);
-            anim.SetTrigger("Death");
-            await new WaitForSeconds(1.5f);
-            Destroy(gameObject);
+            Death();
         }
         damageCD -= Time.deltaTime;
     }
+    public async void Death()
+    {
+        //sounds/effects
+        head.SetActive(false);
+        anim.SetTrigger("Death");
+        await new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+    }
+    public void TakeDamage(int damage)
+    {
+        anim.SetTrigger("TakeDamage");
+        health -= damage;
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Plant"))

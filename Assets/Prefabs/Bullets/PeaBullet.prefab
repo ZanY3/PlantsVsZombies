@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5195568793260203802}
   - component: {fileID: 6490536231121760160}
   - component: {fileID: 319299439965694654}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PeaBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

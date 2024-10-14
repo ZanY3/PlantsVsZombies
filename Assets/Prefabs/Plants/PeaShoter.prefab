@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413933578777647762}
   - component: {fileID: 6797589125496319068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6866383449451637287}
   - component: {fileID: 5431029468069261495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadLeaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8263081241750773083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShootPos
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1204305568904388833}
   - component: {fileID: 8130244707738137652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: -8578857989625205642}
   - component: {fileID: 6348221801783351867}
   - component: {fileID: -7037494890424164798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PeaShoter
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7457870335044965279, guid: b98078a37ec185940a6966fa1f1392cc, type: 3}
   shootPos: {fileID: 8263081241750773083}
   shootCD: 1
-  zombieSeeDistance: 12.3
+  zombieSeeDistance: 12
   zombieLayerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  plantCardManagerTag: PeaShooterCard
 --- !u!1 &7841524109948884281
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7298873318445639625}
   - component: {fileID: 6316752576641882385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

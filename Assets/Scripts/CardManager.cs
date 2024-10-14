@@ -113,7 +113,6 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
             cellVariable.GetComponent<SpriteRenderer>().enabled = false;
             cellVariable.GetComponent<Cell>().canPlace = false;
-            cellVariable = null;
         }
         else
         {
@@ -125,5 +124,11 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         Destroy(plantGhostInstance);
         isDragging = false;
+    }
+    public void ExemptCell()
+    {
+        cellVariable.GetComponent<SpriteRenderer>().enabled = true;
+        cellVariable.GetComponent<Cell>().canPlace = true;
+        cellVariable = null;
     }
 }
