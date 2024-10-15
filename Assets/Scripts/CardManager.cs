@@ -109,7 +109,10 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if (nearestCell != null && cellVariable.GetComponent<Cell>().canPlace)
         {
             sunManager.SunMinus(plantPrice);
-            Instantiate(plantPrefab, nearestCell.transform.position, Quaternion.identity);
+            GameObject plant = Instantiate(plantPrefab, nearestCell.transform.position, Quaternion.identity);
+
+            // Связываем растение с клеткой
+            plant.GetComponent<Plant>().SetCell(cellVariable);
 
             cellVariable.GetComponent<SpriteRenderer>().enabled = false;
             cellVariable.GetComponent<Cell>().canPlace = false;

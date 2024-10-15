@@ -47,12 +47,19 @@ public class ZombieController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Plant"))
+        if (collision.gameObject.CompareTag("Plant"))
         {
-            if(damageCD <= 0)
+            if (damageCD <= 0)
             {
                 anim.SetTrigger("Damage");
-                collision.gameObject.GetComponent<PlantHp>().HealthMinus(damage);
+                PlantHp plantHp = collision.gameObject.GetComponent<PlantHp>();
+                plantHp.HealthMinus(damage);
+
+                if (plantHp.health <= 0)
+                {
+                    Destroy(collision.gameObject);  // Это вызовет OnDestroy() у растения
+                }
+
                 damageCD = startDamageCD;
             }
         }

@@ -8,10 +8,12 @@ public class PlantHp : MonoBehaviour
     public string plantCardManagerTag;
 
     private CardManager cardManager;
+    private Animator anim;
 
     private void Start()
     {
         cardManager = GameObject.FindGameObjectWithTag(plantCardManagerTag).GetComponent<CardManager>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -25,6 +27,7 @@ public class PlantHp : MonoBehaviour
     }
     public void HealthMinus(int count)
     {
+        anim.SetTrigger("TakeDamage");
         health -= count;
     }
 }
