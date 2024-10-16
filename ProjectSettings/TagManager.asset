@@ -10,6 +10,7 @@ TagManager:
   - Plant
   - SunflowerCard
   - PeaShooterCard
+  - NutCard
   layers:
   - Default
   - TransparentFX

@@ -1,7 +1,5 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 using UnityEngine.UI;
 
 public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
@@ -17,6 +15,7 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private GameObject cellVariable;
     private SunManager sunManager;
 
+    
     public void OnPointerDown(PointerEventData eventData)
     {
         if (plantPrefab != null && sunManager.count >= plantPrice)

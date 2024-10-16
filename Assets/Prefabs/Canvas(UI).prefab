@@ -431,6 +431,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card(PeanutShooter) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4403112317116631217, guid: 7efb32b75d2383c48b3363cbfe379633, type: 3}
+      propertyPath: m_TagString
+      value: PeaShooterCard
+      objectReference: {fileID: 0}
     - target: {fileID: 7585622538745618551, guid: 7efb32b75d2383c48b3363cbfe379633, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -548,6 +552,10 @@ PrefabInstance:
     - target: {fileID: 3057505597189820290, guid: b41e49bd3540bfc4f8028cb40615ffb1, type: 3}
       propertyPath: m_Name
       value: Card(SunFlower)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057505597189820290, guid: b41e49bd3540bfc4f8028cb40615ffb1, type: 3}
+      propertyPath: m_TagString
+      value: SunflowerCard
       objectReference: {fileID: 0}
     - target: {fileID: 8450540883247520141, guid: b41e49bd3540bfc4f8028cb40615ffb1, type: 3}
       propertyPath: m_Pivot.x
