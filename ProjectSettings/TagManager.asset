@@ -11,6 +11,8 @@ TagManager:
   - SunflowerCard
   - PeaShooterCard
   - NutCard
+  - FxTemporaire
+  - PotatoMineCard
   layers:
   - Default
   - TransparentFX
