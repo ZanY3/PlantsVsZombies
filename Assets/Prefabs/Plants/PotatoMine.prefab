@@ -149,6 +149,7 @@ MonoBehaviour:
   readyToExplodeSprite: {fileID: -1040647300, guid: 7822a664b4760eb4fa32d99cea0b487f, type: 3}
   explosionParticles: {fileID: 2491886195210529569, guid: d13d2e864e03eaf46ac3677f829241d4, type: 3}
   readyCd: 20
+  explosionSound: {fileID: 8300000, guid: b725cd684edb05f44907f0a8b3594aa3, type: 3}
 --- !u!114 &4763203085475074517
 MonoBehaviour:
   m_ObjectHideFlags: 0

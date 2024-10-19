@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 21300000, guid: 54b9d76b2166daf409c1585e78032513, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   addValue: 25
   takeParticles: {fileID: 2448207519501365352, guid: 288d617664c0d1040b95902e65c604f3, type: 3}
   destroyTime: 15
+  sunTakeSound: {fileID: 8300000, guid: 58affc73e2148c548b34e2ab6de05df1, type: 3}
 --- !u!95 &8401802860332993966
 Animator:
   serializedVersion: 5

@@ -13,12 +13,13 @@ public class ZombieSpawner : MonoBehaviour
     public int enemiesToSpawn;
     public List<int> enemiesPerWave;
 
+    [Space]
+    public AudioClip waveStartSound;
+
     [Range(0.1f, 10f)] public float timeBetweenWaves;
-    //public UnityEvent onWaveStart;
-    //public UnityEvent onWaveEnd;
-    //public UnityEvent onWavesCleared;
 
     private int waveCount;
+    private AudioSource source;
 
     void Spawn()
     {
@@ -27,10 +28,12 @@ public class ZombieSpawner : MonoBehaviour
     }
     async void Start()
     {
+        source = GetComponent<AudioSource>();
+
         foreach (var num in enemiesPerWave) //waves
         {
             enemiesToSpawn = num;
-            //onWaveStart.Invoke();
+            OnWaveStart();
             waveCount++;
             await new WaitForSeconds(2f);
             while (enemiesToSpawn > 0)
@@ -39,10 +42,15 @@ public class ZombieSpawner : MonoBehaviour
                 Spawn();
                 enemiesToSpawn--;
             }
-            //onWaveEnd.Invoke();
+            //onWaveEnd
             await new WaitForSeconds(timeBetweenWaves);
         }
-        //onWavesCleared.Invoke();
+        //onWavesCleared
 
+    }
+
+    public void OnWaveStart()
+    {
+        source.PlayOneShot(waveStartSound);
     }
 }

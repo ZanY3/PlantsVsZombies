@@ -8,12 +8,15 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject icon;
     public GameObject plantGhostPrefab;  // Призрак, задается через инспектор
     public int plantPrice;
+    [Space]
+    public AudioClip plantSetSound;
 
     private GameObject gridObj;
     private GameObject plantGhostInstance;  // Экземпляр призрака
     private bool isDragging = false;
     private GameObject cellVariable;
     private SunManager sunManager;
+    private AudioSource source;
 
     
     public void OnPointerDown(PointerEventData eventData)
@@ -47,6 +50,7 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void Start()
     {
         gridObj.SetActive(false);
+        source = GetComponentInParent<AudioSource>();
     }
 
     void Update()
@@ -107,6 +111,7 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         if (nearestCell != null && cellVariable.GetComponent<Cell>().canPlace)
         {
+            source.PlayOneShot(plantSetSound);
             sunManager.SunMinus(plantPrice);
             GameObject plant = Instantiate(plantPrefab, nearestCell.transform.position, Quaternion.identity);
 

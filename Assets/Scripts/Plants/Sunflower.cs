@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Sunflower : MonoBehaviour
@@ -17,13 +18,19 @@ public class Sunflower : MonoBehaviour
     public Sprite defaultSprite;
     public Sprite spawnSprite;
 
+    [Space]
+    public AudioClip sunSpawnSound;
+
 
     private Animator anim;
     private float minX, minY, maxX, maxY;
     private float startSunSpawnCD;
+    private AudioSource source;
 
     private void Start()
     {
+        source = GetComponent<AudioSource>();
+
         minX = transform.position.x - 0.5f;
         maxX = transform.position.x + 0.5f;
         minY = transform.position.y - 0.5f;
@@ -53,6 +60,8 @@ public class Sunflower : MonoBehaviour
     }
     public void SpawnSun()
     {
+        source.PlayOneShot(sunSpawnSound);
+
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
 

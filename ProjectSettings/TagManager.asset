@@ -13,6 +13,8 @@ TagManager:
   - NutCard
   - FxTemporaire
   - PotatoMineCard
+  - SunSource
+  - MineSource
   layers:
   - Default
   - TransparentFX

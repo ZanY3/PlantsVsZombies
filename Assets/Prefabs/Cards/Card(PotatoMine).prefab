@@ -166,9 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantPrefab: {fileID: 521567652033175009, guid: 63ab0f2035a78434b8614bbcf3763afd, type: 3}
-  icon: {fileID: 6412958899860280063, guid: ff8a774cb5bd7b34eb348b6aad753415, type: 3}
+  icon: {fileID: 6384100574840591681}
   plantGhostPrefab: {fileID: 6412958899860280063, guid: ff8a774cb5bd7b34eb348b6aad753415, type: 3}
   plantPrice: 25
+  plantSetSound: {fileID: 8300000, guid: b27140e3e683f6749a85174f21af7035, type: 3}
 --- !u!1 &9171488290010579500
 GameObject:
   m_ObjectHideFlags: 0

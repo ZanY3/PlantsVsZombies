@@ -94,6 +94,7 @@ MonoBehaviour:
   icon: {fileID: 3209710648336551236}
   plantGhostPrefab: {fileID: 6412958899860280063, guid: 08ecfd508605c8244a063dff87488928, type: 3}
   plantPrice: 50
+  plantSetSound: {fileID: 8300000, guid: b27140e3e683f6749a85174f21af7035, type: 3}
 --- !u!1 &3209710648336551236
 GameObject:
   m_ObjectHideFlags: 0

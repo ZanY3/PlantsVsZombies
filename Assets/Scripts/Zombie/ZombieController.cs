@@ -11,15 +11,25 @@ public class ZombieController : MonoBehaviour
 
     public GameObject head;
 
+    [Space]
+    public AudioClip damageSound;
+    public AudioClip takeDamageSound;
+    public AudioClip deathSound;
+
     private Rigidbody2D rb;
     private Animator anim;
     private float startDamageCD;
+    private AudioSource source;
+    private float randomPitch;
+    private bool isPlayedDeathSound = false;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         startDamageCD = damageCD;
+        source = GetComponent<AudioSource>();
+
     }
     private void Update()
     {
@@ -33,7 +43,13 @@ public class ZombieController : MonoBehaviour
     }
     public async void Death()
     {
-        //sounds/effects
+        //effects
+        if(!isPlayedDeathSound)
+        {
+            isPlayedDeathSound = true;
+            source.PlayOneShot(deathSound);
+        }
+
         head.SetActive(false);
         anim.SetTrigger("Death");
         await new WaitForSeconds(1.5f);
@@ -41,6 +57,10 @@ public class ZombieController : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        randomPitch = Random.Range(0.9f, 1.35f);
+        source.pitch = randomPitch;
+        source.PlayOneShot(takeDamageSound);
+
         anim.SetTrigger("TakeDamage");
         health -= damage;
     }
@@ -51,6 +71,10 @@ public class ZombieController : MonoBehaviour
         {
             if (damageCD <= 0)
             {
+                randomPitch = Random.Range(0.9f, 1.35f);
+                source.pitch = randomPitch;
+
+                source.PlayOneShot(damageSound);
                 anim.SetTrigger("Damage");
                 PlantHp plantHp = collision.gameObject.GetComponent<PlantHp>();
                 plantHp.HealthMinus(damage);

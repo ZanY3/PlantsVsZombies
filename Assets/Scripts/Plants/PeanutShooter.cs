@@ -12,14 +12,19 @@ public class PeanutShooter : MonoBehaviour
     public float zombieSeeDistance = 10f;
     public LayerMask zombieLayerMask;
 
+    [Space]
+    public AudioClip shootSound;
+
     private bool seeZombie = false;
     private float startShootCd;
     private Animator anim;
+    private AudioSource source;
 
     private void Start()
     {
         startShootCd = shootCD;
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -52,6 +57,7 @@ public class PeanutShooter : MonoBehaviour
     }
     public void Shoot()
     {
+        source.PlayOneShot(shootSound);
         anim.SetTrigger("Shoot");
         Instantiate(bulletPrefab, shootPos.position, Quaternion.identity);
     }

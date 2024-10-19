@@ -8,13 +8,17 @@ public class PotatoMine : MonoBehaviour
     public GameObject explosionParticles;
     public float readyCd;
 
+    [Space]
+    public AudioClip explosionSound;
+
     private SpriteRenderer sRenderer;
     private bool isReady = false;
+    private AudioSource source;
 
     private void Start()
     {
         sRenderer = GetComponent<SpriteRenderer>();
-
+        source = GameObject.FindGameObjectWithTag("MineSource").GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -31,6 +35,8 @@ public class PotatoMine : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Zombie") && isReady)
         {
+            source.PlayOneShot(explosionSound);
+
             collision.gameObject.GetComponent<ZombieController>().health = 0;
             Instantiate(explosionParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
