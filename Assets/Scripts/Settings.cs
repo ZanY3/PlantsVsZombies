@@ -5,8 +5,16 @@ using UnityEngine.Audio;
 
 public class Settings : MonoBehaviour
 {
+    public AudioClip buttonSound;
+
     public AudioMixer audioMixer;
     public GameObject panelCanvas;
+
+    private AudioSource source;
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     public void SetVolume(float volume)
     {
@@ -15,10 +23,12 @@ public class Settings : MonoBehaviour
 
     public void OpenSettingsPanel()
     {
+        source.PlayOneShot(buttonSound);
         panelCanvas.SetActive(true);
     }
     public void CloseSettingsPanel()
     {
+        source.PlayOneShot(buttonSound);
         panelCanvas.SetActive(false);
     }
 }
