@@ -15,6 +15,7 @@ TagManager:
   - PotatoMineCard
   - SunSource
   - MineSource
+  - MenuMusic
   layers:
   - Default
   - TransparentFX
