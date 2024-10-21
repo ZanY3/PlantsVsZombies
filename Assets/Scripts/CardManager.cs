@@ -8,8 +8,11 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject icon;
     public GameObject plantGhostPrefab;  // Призрак, задается через инспектор
     public int plantPrice;
+    public float buyCd;
+
     [Space]
     public AudioClip plantSetSound;
+    public Image cdImage;
 
     private GameObject gridObj;
     private GameObject plantGhostInstance;  // Экземпляр призрака
@@ -17,11 +20,12 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private GameObject cellVariable;
     private SunManager sunManager;
     private AudioSource source;
+    private float startBuyCd;
 
     
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (plantPrefab != null && sunManager.count >= plantPrice)
+        if (plantPrefab != null && sunManager.count >= plantPrice && buyCd <= 0)
         {
             gridObj.SetActive(true);
             plantGhostInstance = Instantiate(plantGhostPrefab);
@@ -49,12 +53,29 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Start()
     {
+        cdImage.gameObject.SetActive(false);
         gridObj.SetActive(false);
+        startBuyCd = buyCd;
+        buyCd = 0;
         source = GetComponentInParent<AudioSource>();
     }
 
     void Update()
     {
+        if (buyCd > 0)
+        {
+            cdImage.gameObject.SetActive(true);
+            buyCd -= Time.deltaTime;
+
+            cdImage.fillAmount = buyCd / startBuyCd;
+        }
+        else
+        {
+            cdImage.fillAmount = 1;
+            cdImage.gameObject.SetActive(false);
+        }
+
+
         if (sunManager.count < plantPrice)
             SetAlpha(0.5f);
         else
@@ -109,7 +130,7 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             }
         }
 
-        if (nearestCell != null && cellVariable.GetComponent<Cell>().canPlace)
+        if (nearestCell != null && cellVariable.GetComponent<Cell>().canPlace && buyCd <= 0)
         {
             source.PlayOneShot(plantSetSound);
             sunManager.SunMinus(plantPrice);
@@ -120,6 +141,8 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
             cellVariable.GetComponent<SpriteRenderer>().enabled = false;
             cellVariable.GetComponent<Cell>().canPlace = false;
+
+            buyCd = startBuyCd;
         }
         else
         {
