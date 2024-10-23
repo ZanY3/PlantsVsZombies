@@ -9,7 +9,8 @@ public class Sunflower : MonoBehaviour
     public GameObject spawnParticles;
 
     [Space]
-    public float sunSpawnCD;
+    public float minStartSpawnCD;
+    public float maxStartSpawnCD;
     public float minSpawnCD;
     public float maxSpawnCD;
 
@@ -25,6 +26,7 @@ public class Sunflower : MonoBehaviour
     private Animator anim;
     private float minX, minY, maxX, maxY;
     private float startSunSpawnCD;
+    private float sunSpawnCD;
     private AudioSource source;
 
     private void Start()
@@ -36,7 +38,7 @@ public class Sunflower : MonoBehaviour
         minY = transform.position.y - 0.5f;
         maxY = transform.position.y + 0.5f;
 
-        sunSpawnCD = Random.Range(minSpawnCD, maxSpawnCD);
+        sunSpawnCD = Random.Range(minStartSpawnCD, maxStartSpawnCD);
         startSunSpawnCD = sunSpawnCD;
 
         anim = GetComponent<Animator>();

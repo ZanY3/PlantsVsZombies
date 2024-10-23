@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Rendering;
 
 public class ZombieSpawner : MonoBehaviour
 {
-    public GameObject zombiePrefab;
+    public List<GameObject> zombiePrefabs;
+    public List<float> spawnChances;
+
+    [Space]
     public GameObject winPanel;
 
     public List<Transform> spawnPoints;
@@ -32,13 +36,48 @@ public class ZombieSpawner : MonoBehaviour
     void Spawn()
     {
         var point = spawnPoints[Random.Range(0, spawnPoints.Count)];
-        Instantiate(zombiePrefab, point.position, Quaternion.identity);
+        GameObject selectedZombiePrefab = GetRandomZombiePrefab();
+
+        if (selectedZombiePrefab != null)
+        {
+            Instantiate(selectedZombiePrefab, point.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("Не удалось выбрать префаб зомби для спавна.");
+        }
     }
+
+    GameObject GetRandomZombiePrefab()
+    {
+        if (zombiePrefabs.Count == 0 || spawnChances.Count == 0 || zombiePrefabs.Count != spawnChances.Count)
+        {
+            Debug.LogError("Списки префабов и шансов должны быть одинакового размера и не пустыми.");
+            return null;
+        }
+
+        float totalChance = spawnChances.Sum(); // Суммируем все шансы
+        float randomValue = Random.Range(0f, totalChance); // Генерируем случайное число в диапазоне от 0 до суммы шансов
+
+        float cumulativeChance = 0f;
+
+        for (int i = 0; i < zombiePrefabs.Count; i++)
+        {
+            cumulativeChance += spawnChances[i];
+            if (randomValue <= cumulativeChance)
+            {
+                return zombiePrefabs[i];
+            }
+        }
+
+        return null;
+    }
+
     async void Start()
     {
         source = GetComponent<AudioSource>();
 
-        foreach (var num in enemiesPerWave) //waves
+        foreach (var num in enemiesPerWave) // Волны
         {
             await new WaitForSeconds(timeBetweenWaves);
             enemiesToSpawn = num;
@@ -52,13 +91,13 @@ public class ZombieSpawner : MonoBehaviour
                 enemiesToSpawn--;
             }
         }
-
     }
+
     private async void Update()
-    {   
-        if(enemiesLeft <= 0 && !isUsedWin)
+    {
+        if (enemiesLeft <= 0 && !isUsedWin)
         {
-            //onWavesCleared
+            // Все волны зачищены
             source.PlayOneShot(winSound);
             await new WaitForSeconds(2);
             winPanel.SetActive(true);
@@ -70,7 +109,7 @@ public class ZombieSpawner : MonoBehaviour
 
     public void OnWaveStart()
     {
-        if(enemiesLeft > 0)
+        if (enemiesLeft > 0)
             source.PlayOneShot(waveStartSound);
     }
 }

@@ -98,9 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sunPrefab: {fileID: 4729300910955428970, guid: a1f62fb6e9dd94a429a1267a355a306a, type: 3}
   spawnParticles: {fileID: 2448207519501365352, guid: 288d617664c0d1040b95902e65c604f3, type: 3}
-  sunSpawnCD: 0
-  minSpawnCD: 8.5
-  maxSpawnCD: 16
+  minStartSpawnCD: 8
+  maxStartSpawnCD: 12
+  minSpawnCD: 19
+  maxSpawnCD: 23
   headSpRndr: {fileID: 549989593393302242}
   defaultSprite: {fileID: 1612831645, guid: 9606952bafb5abb4cb8a40608d45d905, type: 3}
   spawnSprite: {fileID: 1906396783, guid: 9606952bafb5abb4cb8a40608d45d905, type: 3}

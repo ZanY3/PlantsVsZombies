@@ -12,6 +12,11 @@ public class ZombieController : MonoBehaviour
     public GameObject head;
 
     [Space]
+    public bool isWithCone = false;
+    public GameObject cone;
+
+
+    [Space]
     public AudioClip damageSound;
     public AudioClip takeDamageSound;
     public AudioClip deathSound;
@@ -35,6 +40,11 @@ public class ZombieController : MonoBehaviour
     }
     private void Update()
     {
+        if(isWithCone && health <= health - 100)
+        {
+            cone.SetActive(false);
+        }
+
         rb.velocity = new Vector2(speed, rb.velocity.y);
 
         if(health <= 0)
