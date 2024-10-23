@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiePrefab: {fileID: 7216843860909624600, guid: 5bfdd1a87550abe419eede3d5c48b5e1, type: 3}
+  winPanel: {fileID: 0}
   spawnPoints:
   - {fileID: 4259817500896840812}
   - {fileID: 9069412515289380058}
@@ -182,6 +183,7 @@ MonoBehaviour:
   enemiesPerWave: 01000000020000000200000001000000010000000200000005000000
   waveStartSound: {fileID: 8300000, guid: 5043a612c2d5b3e4699fb2d14a3a5398, type: 3}
   timeBetweenWaves: 10
+  winSound: {fileID: 8300000, guid: 352fd9b98b6f5ed418baa3f397f6f6d8, type: 3}
 --- !u!82 &211515211523843220
 AudioSource:
   m_ObjectHideFlags: 0

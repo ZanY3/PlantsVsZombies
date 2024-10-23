@@ -22,6 +22,7 @@ public class ZombieController : MonoBehaviour
     private AudioSource source;
     private float randomPitch;
     private bool isPlayedDeathSound = false;
+    private ZombieSpawner spawner;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class ZombieController : MonoBehaviour
         anim = GetComponent<Animator>();
         startDamageCD = damageCD;
         source = GetComponent<AudioSource>();
+        spawner = FindAnyObjectByType<ZombieSpawner>();
 
     }
     private void Update()
@@ -48,6 +50,7 @@ public class ZombieController : MonoBehaviour
         {
             isPlayedDeathSound = true;
             source.PlayOneShot(deathSound);
+            spawner.enemiesLeft--;
         }
 
         head.SetActive(false);

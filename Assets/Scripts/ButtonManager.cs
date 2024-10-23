@@ -16,9 +16,15 @@ public class ButtonManager : MonoBehaviour
 
     public void Play()
     {
+        Time.timeScale = 1f;
         source.PlayOneShot(buttonSound);
         SceneManager.LoadScene("Level 1");
     }
+    public void LoadScene(string name)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(name);
+    }    
     public void OpenLink(string link)
     {
         Application.OpenURL(link);
