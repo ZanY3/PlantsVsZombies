@@ -40,7 +40,7 @@ public class ZombieController : MonoBehaviour
     }
     private void Update()
     {
-        if(isWithCone && health <= health - 100)
+        if(isWithCone && health <= health / 2)
         {
             cone.SetActive(false);
         }

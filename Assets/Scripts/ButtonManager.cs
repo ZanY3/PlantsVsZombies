@@ -16,14 +16,14 @@ public class ButtonManager : MonoBehaviour
 
     public void Play()
     {
-        Time.timeScale = 1f;
         source.PlayOneShot(buttonSound);
         SceneManager.LoadScene("Level 1");
+        Time.timeScale = 1f;
     }
     public void LoadScene(string name)
     {
-        Time.timeScale = 1f;
         SceneManager.LoadScene(name);
+        Time.timeScale = 1f;
     }    
     public void OpenLink(string link)
     {

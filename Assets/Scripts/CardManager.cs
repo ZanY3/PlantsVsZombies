@@ -47,6 +47,7 @@ public class CardManager : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         sunManager = FindAnyObjectByType<SunManager>();
         gridObj = GameObject.FindGameObjectWithTag("Grid");
     }

@@ -98,12 +98,12 @@ public class ZombieSpawner : MonoBehaviour
         if (enemiesLeft <= 0 && !isUsedWin)
         {
             // Все волны зачищены
+            isUsedWin = true;
             source.PlayOneShot(winSound);
             await new WaitForSeconds(2);
             winPanel.SetActive(true);
             await new WaitForSeconds(2);
             Time.timeScale = 0f;
-            isUsedWin = true;
         }
     }
 
