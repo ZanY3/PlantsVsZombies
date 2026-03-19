@@ -3,7 +3,7 @@
 A fun fan-made copy of the classic **Plants vs. Zombies**!  
 
 🎮 **Play now:**  
-👉 [Plants vs. Zombies (Fan Copy) on Itch.io](https://zanyexe.itch.io/plants-vs-zombies-copy)
+👉 [Plants vs. Zombies (Fan Copy) on Itch.io](https://zanydev.itch.io/plants-vs-zombies-copy)
 
 ---
 
